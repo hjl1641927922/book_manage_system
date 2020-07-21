@@ -1,11 +1,16 @@
-package com.lm.mapper;
+package com.lm.service;
 
 import com.lm.pojo.Books;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface BookMapper {
+/**
+ * @author super
+ */
+@Service
+public interface BookService {
     /**
      * 增加一本书
      * @param books
@@ -16,7 +21,7 @@ public interface BookMapper {
      * 按照书的id删除一本书
      * @param id
      */
-    void deleteBookById(@Param("id") int id);
+    void deleteBookById( int id);
 
     /**
      * 新增一本书
@@ -29,7 +34,7 @@ public interface BookMapper {
      * @param id
      * @return
      */
-    Books queryBookById(@Param("id") int id);
+    Books queryBookById( int id);
 
     /**
      * 返回书的列表
@@ -42,6 +47,6 @@ public interface BookMapper {
      * @param bookName
      * @return
      */
-    List<Books> queryBookByName(@Param("bookName") String bookName);
+    List<Books> queryBookByName(String bookName);
 
 }
