@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -27,9 +28,11 @@ public class BookController {
     }
 
     @RequestMapping("/allBook")
-    public String list(Model model) {
+    public String list(Model model, HttpSession session) {
         List<Books> books = bookService.queryBookList();
+        final String userLoginInfo = (String) session.getAttribute("userLoginInfo");
         model.addAttribute("books", books);
+        model.addAttribute("username",userLoginInfo);
         return "allBook";
     }
 

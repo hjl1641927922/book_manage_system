@@ -26,7 +26,7 @@
                     <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBookPage">增加书籍</a>
                     <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/allBook">显示所有书籍</a>
                 </div>
-                <div class="col-md-4 column col-md-offset-4">
+                <div class="col-md-4 column">
                     <form class="form-inline" action="${pageContext.request.contextPath}/book/query" method="post">
                         <div class="form-group">
                             <label>
@@ -35,6 +35,10 @@
                         </div>
                         <button type="submit" class="btn btn-default">搜索</button>
                     </form>
+                </div>
+                <div>
+                    <span>欢迎！${username}</span>
+                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/logout">注销</a>
                 </div>
             </div>
         </div>
