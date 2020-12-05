@@ -8,7 +8,7 @@ import java.util.List;
 public interface BookMapper {
     /**
      * 增加一本书
-     * @param books
+     * @param books 
      */
     void addBook(Books books);
 
